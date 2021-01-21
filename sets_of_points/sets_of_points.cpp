@@ -29,6 +29,8 @@ bool point_between(const point& a, const point& b, const point& c) {
 int vars(const vector<point>& v) {
     int result = 0;
     
+    // количество искомых прямых - количество отрезков, соединяющих 2 точки, не содержащих между собой третью (на одной прямой)
+    // поэтому рассматриваем каждую пару точек, проверяя, не  содержится ли между них любая из оставшихся
     for (size_t i = 0; i < v.size(); i++) {
         for (size_t j = i + 1; j < v.size(); j++) {
             result++;
